@@ -2,8 +2,8 @@
 
 | ID # | Short Desc   |	Description                                                                              |
 | ---- | ------------ | ----------------------------------------------------------------------                   |
-| 4624 | Logon Event	| Logon event, there are different types corresponding to the type of Login:
-|      |              |  Logon Type   
+| 4624 | Logon Event	| Logon event, there are different types corresponding to the type of Login:               |
+|      |              |  Logon Type                                                                              |
 |      |              | 2 - Interactive - Logon via console
 |      |              | 3 - Network - Network Logon
 |      |              | 4 - Batch - Batch Logon (eg scheduled task)
