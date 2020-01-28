@@ -1,22 +1,25 @@
 # EventIDs
 
-| ID # | Short Desc |	Description |
-| ---- | ---------- | ----------- |
-4624	Logon Event	
-Logon event, there are different types corresponding to the type of Login:
-Logon Type   
-2 - Interactive - Logon via console
-3 - Network - Network Logon
-4 - Batch - Batch Logon (eg scheduled task)
-5 - Service - Windows Service Logon
-7 - Unlock -  Credentials used to unlock screen
-8 - NetworkCleartext - Network Credentials (Cleartext - Logon with credentials sent in the clear text. Most often indicates a logon to IIS with "basic authentication)
-9 - NewCredentials - Different Credentials other than logged on user (NewCredentials such as with RunAs or mapping a network drive with alternate credentials.  This logon type does not seem to show up in any events.  If you want to track users attempting to logon with alternate credentials see 4648.  
-10 - RemoteInteractive - (RDP)
-11 - CachedInteractive - Cached Credentials  (Terminal Services, Remote Desktop or Remote Assistance)
-12 - Cached Remote interactive (RDP - similar to 10)
-13 - Cached Unlocked - (similar to type 7)
-4625	Failed Logon	 
+| ID # | Short Desc   |	Description                                                                              |
+| ---- | ------------ | ----------------------------------------------------------------------                   |
+| 4624 | Logon Event	| Logon event, there are different types corresponding to the type of Login:
+|      |              |  Logon Type   
+|      |              | 2 - Interactive - Logon via console
+|      |              | 3 - Network - Network Logon
+|      |              | 4 - Batch - Batch Logon (eg scheduled task)
+|      |              | 5 - Service - Windows Service Logon
+|      |              | 7 - Unlock -  Credentials used to unlock screen
+|      |              | 8 - NetworkCleartext - Network Credentials (Cleartext - Logon with credentials sent in the clear text. 
+|      |              | Most often indicates a logon to |IIS with "basic authentication)
+|      |               | 9 - NewCredentials - Different Credentials other than logged on user 
+|      |               | (NewCredentials such as with RunAs or |  |  mapping a network drive with | alternate credentials.  
+|      |               | This logon type does not seem to show up in any events.  If you want to track users attempting to logon with 
+|      |               | alternate credentials see 4648.  
+|      |               | 10 - RemoteInteractive - (RDP)
+|      |               | 11 - CachedInteractive - Cached Credentials  (Terminal Services, Remote Desktop or Remote Assistance)
+|      |               | 12 - Cached Remote interactive (RDP - similar to 10)
+|      |               | 13 - Cached Unlocked - (similar to type 7)
+| 4625 | Failed Logon |	 
 4648	 A logon was attempted using explicit credentials	A user connects to a server or runs a program locally using alternate credentials.  For instance a user maps a drive to a server but specifies a different user's credentials or opens a shortcut under RunAs by shift-control-right-clicking on the shortcut, selecting Run as..., and then filling in a different user's credentials in the dialog box that appears.  Or a user logs on to a web site using new specific credentials.  That is the case above in the example - Administrator was logged on to the local computer and then accessed a SharePoint server sp01.icemail.com as rsmith@mtg.com.
 This event is also logged when a process logs on as a different account such as when the Scheduled Tasks service starts a task as the specified user. Logged on user: specifies the original user account.
 With User Account Control enabled, an end user runs a program requiring admin authority.  You will get this event where the process information is consent.exe.  Unfortunately Subject does not identify the end user.
